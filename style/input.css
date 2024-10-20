@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .flex-row-center {
+    @apply flex flex-row items-center;
+  }
+
+  .translate-center {
+    @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .responsive-center {
+    @apply items-center md:items-start text-center md:text-start;
+  }
+}
+
+
+@layer components {
+  .section {
+    @apply max-w-screen-2xl w-full mx-auto;
+  }
+
+  .body-m {
+    @apply font-normal text-base/[22.4px];
+  }
+
+  .body-l {
+    @apply font-normal text-lg/[28.8px];
+  }
+
+  .body-xl {
+    @apply font-normal text-xl/9;
+  }
+
+  .body-xxl {
+    @apply font-normal text-2xl/[38.4px]
+  }
+
+  .link-m {
+    @apply py-3 px-2 text-base leading-6 font-medium;
+  }
+
+  .heading-1m {
+    @apply font-extrabold text-7xl/[79.2px];
+  }
+
+  .heading-1l {
+    @apply font-extrabold text-[96px]/[105.6px]
+  }
+
+  .heading-2 {
+    @apply font-extrabold text-[56px]/[61.6px];
+  }
+
+  .heading-3 {
+    @apply font-extrabold text-5xl/[52.8px];
+  }
+
+  .heading-5 {
+    @apply font-bold text-32px;
+  }
+
+  .heading-6 {
+    @apply text-2xl/[26.4px] font-bold;
+  }
+
+  .text-container {
+    @apply px-4;
+  }
+
+  .button {
+    @apply py-3 px-2;
+  }
+
+  .button-m {
+    @apply button text-base font-medium;
+  }
+
+  .button-l {
+    @apply button text-xl/6 font-medium tracking-0.5px;
+  }
+
+  .button-outline {
+    @apply rounded-lg border-2 border-current;
+  }
+
+  .button-outline-m {
+    @apply button-m button-outline px-3;
+  }
+
+  .button-outline-l {
+    @apply button-l button-outline px-3;
+  }
+
+  .subtitle-m {
+    @apply font-medium text-base/[17.6px];
+  }
+
+  .subtitle-xl {
+    @apply font-medium text-xl/[22px];
+  }
+
+  .content-wrapper {
+    @apply relative;
+
+    .content-box {
+      @apply relative z-1 bg-slate-900 border border-slate-900 rounded-2.5 shadow-light-xxl;
+
+      > img {
+        @apply rounded-t-2.5;
+      }
+
+      .content-area {
+        @apply flex flex-col gap-y-4 px-8 pt-8;
+      }
+
+      .buttons-area {
+        @apply p-8;
+      }
+    }
+  }
+
+  .custom-tick-list {
+    @apply list-none;
+
+    li {
+      @apply flex md:items-center gap-x-1.5;
+
+      &:before {
+        @apply inline-block align-middle h-6 pt-1 md:pt-0;
+        content: url(../frontend-case/icons/green-tick-icon.svg);
+      }
+    }
+  }
+
+  .company-box {
+    @apply flex flex-col gap-y-2 md:gap-y-4 p-6 md:p-8 bg-white border border-slate-200 rounded-5 shadow-dark-l min-h-[296px];
+  }
+
+  .filled-l {
+    @apply flex-row-center p-4 rounded-lg min-w-[240px] w-[256px];
+
+    .arrow {
+      @apply hidden;
+    }
+
+    &.active {
+      @apply bg-white shadow-dark-m;
+
+      .arrow {
+        @apply block;
+      }
+    }
+
+    .text-container {
+      @apply text-start w-full pl-4 pr-0;
+    }
+  }
+
+  .footer-component {
+    @apply py-3 w-fit;
+  }
+
+  .footer-button {
+    @apply py-[3px] w-fit;
+  }
+}
+
+.hide-scroll-bar {
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 999px;
+    border: 0 none #ffffff;
+  }
+}
